@@ -2,8 +2,9 @@
 Configuring a network via files that generate live ELK deployment on Azure. Done as a part of the 2021 UCLA Cybersecurity Bootcamp.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
-. [elk install] (https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/elk-playbook.yml)
-. [filebeat] 
+. [elk install](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/elk-playbook.yml)
+. [filebeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/filebeat-playbook.yml)
+. [metricbeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/metricbeat-playbook.yml)
 
 This document contains the following details:
 
