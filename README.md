@@ -57,62 +57,60 @@ A summary of the access policies in place can be found in the table below.
 | --- | --- | --- |
 |JumpBox | No | Personal |
 | Web-1 | No | 10.0.0.8 |
-| Web-2 | No | 10.0.08 |
+| Web-2 | No | 10.0.0.8 |
 | ELK Server | No | 10.0.0.8 |
 
 
-
-
-
-
-
-
-
-
-
-
-
-Elk Configuration
+**Elk Configuration**
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-TODO: What is the main advantage of automating configuration with Ansible?
+- Ansible is quick and simple to setup and use. No configuration was performed manually, which is advantageous because the services running can be limited, system installation and update can be streamlined, and processes are replicable as more machines are set up.
 
 The playbook implements the following tasks:
 
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-...
-...
-
-The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
-Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.
+- Install Docker, pip3, and Docker module
+- Use sysctl to increase virtual memory
+- Download and launch docker container for ELK server
 
 
-Target Machines & Beats
+**Target Machines & Beats**
 This ELK server is configured to monitor the following machines:
-
-TODO: List the IP addresses of the machines you are monitoring
+- Web-1 10.0.0.9
+- Web-2 10.0.0.10
 
 We have installed the following Beats on these machines:
 
-TODO: Specify which Beats you successfully installed
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 
-TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.
+- Filebeat collects system logs, which can be used to track system events, etc.
+- Metricbeat collects system and service metric data, which we can use to see CPU usage, etc.
 
 
-Using the Playbook
+**Using the Playbook**
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the filebeat and metricbeat config files to /etc/ansible.
+- Update the config file to include the ELK server's IP address
+- Run the playbook, and navigate to http://[ELK-server-public-IP]:5601/app/kibana to check that the installation worked as expected.
 
-TODO: Answer the following questions to fill in the blanks:
-
-Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-_Which URL do you navigate to in order to check that the ELK server is running?
+- *Which file is the playbook?* filebeat-playbook.yml. metricbeat-playbook.yml
+- *Where do you copy it?* /etc/ansible/filebeat-playbook.yml, /etc/ansible/metricbeat-playbook.yml
+- *Which file do you update to make Ansible run the playbook on a specific machine?* /etc/ansible/hosts.cfg
+- *How do I specify which machine to install the ELK server on* add a group [elk server] and the ELK server IP address, and the [web] group for the web servers
+- *versus which to install Filebeat on?* update filebeat-config.yml. specify which machine to install by updating the host files with ip addresses of web/elk servers and selecting which group to run on in ansible
+- *Which URL do you navigate to in order to check that the ELK server is running?* http://[ELK-server-public-IP:5601]/app/kibana
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+1. ssh RedAdmin@JumpBox(PrivateIP)
+2. sudo docker container list -a - Locate the ansible container
+3. sudo docker start (Funny_Name)
+4. sudo docker attach (Funny_Name)
+5. cd /etc/ansible
+6. ansible-playbook elk-playbook.yml (Installs and Configures ELK-Server)
+7. cd /etc/ansible/
+8. ansible-playbook beats-playbook.yml (Installs and Configures Beats)
+9. Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
