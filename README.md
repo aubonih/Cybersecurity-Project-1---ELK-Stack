@@ -2,47 +2,41 @@
 Configuring a network via files that generate live ELK deployment on Azure. Done as a part of the 2021 UCLA Cybersecurity Bootcamp.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
-. [elk install](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/elk-playbook.yml)
-. [filebeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/filebeat-playbook.yml)
-. [metricbeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/metricbeat-playbook.yml)
+- [elk install](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/elk-playbook.yml)
+- [filebeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/filebeat-playbook.yml)
+- [metricbeat](https://github.com/aubonih/Cybersecurity-Project-1---ELK-Stack/blob/main/yml%20playbooks/metricbeat-playbook.yml)
 
 This document contains the following details:
 
-Description of the Topology
-Access Policies
-ELK Configuration
-
-Beats in Use
-Machines Being Monitored
-
-
-How to Use the Ansible Build
+-Description of the Topology
+-Access Policies
+-ELK Configuration
+ -Beats in Use
+ -Machines Being Monitored
+-How to Use the Ansible Build
 
 
-Description of the Topology
+**Description of the Topology**
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
+Load balancing ensures that the application will be highly responsive, in addition to restricting overload to the network.
 
-TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?
+Load balancing protects against DoS or DDoS attacks. Having a Jump Box prevents all machines in the network from being exposed to the public.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
 
-TODO: What does Filebeat watch for?
-TODO: What does Metricbeat record?
+- Filebeat watches for log files, collects them, and forwards them to Elasticsearch or Logstash.
+- Metricbeat records metric data from your system and services. i.e. CPU usage, memory, etc.
 
 The configuration details of each machine may be found below.
 Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
 
-Name
-Function
-IP Address
-Operating System
-
-
-
-
+| Name | Function | IP Address | Operating System |
+---------------------------------------------------
+| JumpBox | Gateway | 10.0.0.1 | Linux |
+----------------------------------------
+| Web-1 | 
 Jump Box
 Gateway
 10.0.0.1
