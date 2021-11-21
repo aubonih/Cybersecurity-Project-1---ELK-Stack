@@ -113,4 +113,4 @@ As a Bonus, provide the specific commands the user will need to run to download 
 6. ansible-playbook elk-playbook.yml (Installs and Configures ELK-Server)
 7. cd /etc/ansible/
 8. ansible-playbook beats-playbook.yml (Installs and Configures Beats)
-9. Open a new browser on Personal Workstation, navigate to (ELK-Server-PublicIP:5601/app/kibana) - This will bring up Kibana Web Portal
+9. Open a new browser on Personal Workstation, navigate to http://[ELK-server-public-IP:5601]/app/kibana - This will bring up Kibana Web Portal
