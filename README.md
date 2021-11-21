@@ -33,10 +33,11 @@ Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
 | Name | Function | IP Address | Operating System |
----------------------------------------------------
-| JumpBox | Gateway | 10.0.0.1 | Linux |
-----------------------------------------
-| Web-1 | 
+|------|----------|------------|------------------|
+|JumpBox      | Gateway         | 10.0.0.8           |   Linux              |
+|Web-1      |    Web server      | 10.0.0.9           |       Linux           |
+|Web-2      |   Web Server       | 10.0.0.10           |           Linux       |
+|ELK Server      |  ELK-Stack        | 10.1.0.4           |             Linux     |
 Jump Box
 Gateway
 10.0.0.1
