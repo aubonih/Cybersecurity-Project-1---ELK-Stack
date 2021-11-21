@@ -28,8 +28,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat records metric data from your system and services. i.e. CPU usage, memory, etc.
 
 The configuration details of each machine may be found below.
-Note: Use the Markdown Table Generator to add/remove values from the table.
-
 
 
 | Name | Function | IP Address | Operating System |
@@ -38,57 +36,29 @@ Note: Use the Markdown Table Generator to add/remove values from the table.
 |Web-1      |    Web server      | 10.0.0.9           |       Linux           |
 |Web-2      |   Web Server       | 10.0.0.10           |           Linux       |
 |ELK Server      |  ELK-Stack        | 10.1.0.4           |             Linux     |
-Jump Box
-Gateway
-10.0.0.1
-Linux
-
-
-TODO
 
 
 
 
-
-TODO
-
-
-
-
-
-TODO
-
-
-
-
-
-
-
-Access Policies
+**Access Policies**
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-TODO: Add whitelisted IP addresses
+- Personal Public IP address
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by SSH.
 
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+The ELK server was accessed from the JumpBox through port 5601.
 
 A summary of the access policies in place can be found in the table below.
 
 
-
-Name
-Publicly Accessible
-Allowed IP Addresses
-
-
-
-
-Jump Box
-Yes/No
-10.0.0.1 10.0.0.2
-
+|Name | Publicly Accessible | Allowed IP Addresses |
+| --- | --- | --- |
+|JumpBox | No | Personal |
+| Web-1 | No | 10.0.0.8 |
+| Web-2 | No | 10.0.08 |
+| ELK Server | No | 10.0.0.8 |
 
 
 
